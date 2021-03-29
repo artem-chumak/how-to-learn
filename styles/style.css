@@ -10,10 +10,6 @@
 лого везде разные, общая только ширина */
 }
 
-.span-accent {
-  font-weight: bold;
-}
-
 /* header */
 
 .header {
@@ -88,6 +84,9 @@
   line-height: 1.15;
   margin: 0 auto 20px;
   z-index: 3;
+  position: relative; /* чтбы треугольник не перекрыл
+  был коммертарий убрать, т.к. нет потомка, но др. способа
+  без отрицательного z-index не нашёл */
 }
 
 .section-title_theme_dark {
@@ -101,6 +100,7 @@
   margin: 0 auto;
   line-height: 34px;
   z-index: 3;
+  position: relative; /* чтбы треугольник не перекрыл */
 }
 
 .section-subtitle_theme_dark {
@@ -119,6 +119,7 @@
   z-index: 3;
   position: relative;
   list-style-type: none;
+  padding: 0;
 }
 
 .table_theme_dark {
@@ -196,6 +197,10 @@
   font-size: 24px;
   line-height: 34px;
   margin: 0 0 30px 0;
+}
+
+.two-columns__span-accent {
+  font-weight: bold;
 }
 
 .two-columns__paragraph:last-of-type {
@@ -300,8 +305,9 @@
   display: flex;
   justify-content:space-between;
   flex-direction: row;
-
 }
+
+.footer__column
 
 .footer__column_content_copyright {
   display: flex;
@@ -309,6 +315,10 @@
   flex-direction: column;
   flex-basis: 711px;
 }
+
+.footer__column_content_info
+
+.footer__column_content_social
 
 .logo_place_footer {
   width: 183px;
@@ -320,10 +330,6 @@
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
-}
-
-.footer__column_content_info {
-
 }
 
 .footer__column-heading {
