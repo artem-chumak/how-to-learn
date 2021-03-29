@@ -307,7 +307,9 @@
   flex-direction: row;
 }
 
-.footer__column
+.footer__column {
+
+}
 
 .footer__column_content_copyright {
   display: flex;
@@ -316,9 +318,13 @@
   flex-basis: 711px;
 }
 
-.footer__column_content_info
+.footer__column_content_info {
 
-.footer__column_content_social
+}
+
+.footer__column_content_social {
+  
+}
 
 .logo_place_footer {
   width: 183px;
