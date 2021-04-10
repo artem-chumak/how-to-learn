@@ -5,7 +5,3 @@
 .video__iframe:nth-child(even) {
   margin-left: 20px;
 }
-
-.video__iframe:nth-child(n+3) {
-  margin-top: 20px;
-}
