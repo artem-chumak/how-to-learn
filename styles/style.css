@@ -1,14 +1,27 @@
-.page {
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.root {
   min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-.logo {
-/* в брифе написано сделать общий класс logo
-лого везде разные, общая только ширина */
+.rotation {
+  animation-name: rotation;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+.logo {}
 
 /* header */
 
@@ -65,6 +78,11 @@
   color: #2f80ed;
 }
 
+.header__link:hover {
+  opacity: .5;
+  transition: .3s;
+}
+
 .header__square-pic {
   height: 568px;
   width: 568px;
@@ -72,7 +90,7 @@
   position: absolute;
   top: 64px;
   right: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* section */
@@ -83,10 +101,6 @@
   font-weight: bold;
   line-height: 1.15;
   margin: 0 auto 20px;
-  z-index: 3;
-  position: relative; /* чтбы треугольник не перекрыл
-  был коммертарий убрать, т.к. нет потомка, но др. способа
-  без отрицательного z-index не нашёл */
 }
 
 .section-title_theme_dark {
@@ -99,8 +113,6 @@
   font-weight: normal;
   margin: 0 auto;
   line-height: 34px;
-  z-index: 3;
-  position: relative; /* чтбы треугольник не перекрыл */
 }
 
 .section-subtitle_theme_dark {
@@ -116,8 +128,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  z-index: 3;
-  position: relative;
   list-style-type: none;
   padding: 0;
 }
@@ -125,7 +135,6 @@
 .table_theme_dark {
   color: #fff;
 }
-
 
 .table__cell {
   width: 250px;
@@ -207,6 +216,108 @@
   margin: 0;
 }
 
+/* techniques */
+
+.techniques {
+  width: 80%;
+  padding-top: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cards {
+  width: 920px;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.cards_type_grid {
+  display: grid;
+  grid-column-gap: 100px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cards__item {}
+
+.cards__image {
+  width: 160px;
+  height: 160px;
+  margin: 60px 40px 43px;
+  border-radius: 80px;
+  background-size: contain;
+}
+
+.cards__imag_name_attention {
+  background-image: url(../images/cards-attention.png);
+}
+
+.cards__image_name_recall {
+  background-image: url(../images/cards-recall.png)
+}
+
+.cards__image_name_interliving {
+  background-image: url(../images/cards-interliving.png);
+}
+
+.cards__image_name_question {
+  background-image: url(../images/cards-question.png)
+}
+
+.cards__image_name_competence {
+  background-image: url(../images/cards-competence.png);
+}
+
+.cards__title {
+  line-height: 1.15;
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.cards__discription {
+  line-height: 23px;
+  font-size: 18px;
+}
+
+/* video */
+
+.video {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.video__iframes {
+  margin: 50px auto -50px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.video__iframe {
+  border: 0;
+}
+
+.video__iframe:nth-child(even) {
+  margin-left: 20px;
+}
+
+.video__iframe:nth-child(n+3) {
+  margin-top: 20px;
+}
+
+/* oakley */
+
+.oakley {
+  padding-top: 160px;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+}
+
 /* digits */
 
 .digits {
@@ -255,6 +366,11 @@
   top: 50%;
 }
 
+.feynman__link:hover {
+  opacity: .5;
+  transition: .3s;
+}
+
 .feynman__illustration {
   width: 867px;
   height: 637px;
@@ -262,6 +378,81 @@
   bottom: 0;
   left: 0;
   z-index:1;
+}
+
+/* khan */
+
+.khan {
+  text-align: center;
+  padding-top: 105px;
+  background: #f2f2f2;
+}
+
+.khan__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.khan__author {
+  line-height: 42px;
+  font-size: 30px;
+  margin: 0;
+}
+
+.khan__title {
+  margin: 0 0 50px 0;
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.khan__quote {
+  max-width: 790px;
+  text-align: left;
+  margin: 0 0 36px 0;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.khan__quote-author {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.khan__quote-author-subline {
+  margin: 0 0 68px 0;
+  line-height: 1.15;
+  font-size: 24px;
+}
+
+.khan__book-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.khan__book-pic {
+  width: 620px;
+  height: 608px;
+  margin-right: 48px;
+  background-image: url('../images/khan-book.jpg');
+  background-size: cover;
+}
+
+.khan__buy-link {
+  font-size: 30px;
+  line-height: 42px;
+  text-decoration: none;
+  color: #2f80ed;
+}
+
+.khan__buy-link:hover {
+  opacity: .5;
+  transition: .3s;
 }
 
 /* kaufman */
@@ -272,6 +463,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 .kaufman__triangle {
@@ -282,7 +474,31 @@
   position: absolute;
   top: 0;
   right: -210px;
-  z-index: 0;
+  z-index: -1;
+}
+
+/* resources */
+
+.resources {
+  padding: 100px 0 217px 0;
+  text-align: center;
+}
+
+.resources__logo-zone {
+  margin-top: 80px;
+  width: 1100px;
+  margin: 80px auto 0;
+  display: flex;
+}
+
+.resources__logo {
+  width: 270px;
+  height: 38px;
+}
+
+.resources__logo:hover {
+  opacity: .5;
+  transition: .3s;
 }
 
 /* footer */
@@ -307,9 +523,7 @@
   flex-direction: row;
 }
 
-.footer__column {
-
-}
+.footer__column {}
 
 .footer__column_content_copyright {
   display: flex;
@@ -318,13 +532,9 @@
   flex-basis: 711px;
 }
 
-.footer__column_content_info {
+.footer__column_content_info {}
 
-}
-
-.footer__column_content_social {
-  
-}
+.footer__column_content_social {}
 
 .logo_place_footer {
   width: 183px;
@@ -357,6 +567,11 @@
   color: #fff;
   font-weight: normal;
   line-height: 30px;
+}
+
+.footer__column-link:hover {
+  opacity: .5;
+  transition: .3s;
 }
 
 .footer__social-icon {
