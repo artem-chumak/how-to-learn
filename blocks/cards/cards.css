@@ -3,4 +3,9 @@
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 100px;
+  -ms-grid-columns: 1fr 100px 1fr 100px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
